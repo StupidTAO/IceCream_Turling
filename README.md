@@ -15,16 +15,22 @@ QQ聊天）的快速接入。
 本设计主要分为两部分，app自身功能设计和第三方接口再封装设计。
 ### 引导页模块介绍
 从欢迎界面总判断是否是首次登录，有无设置手势密码，首次登录转到引导界面，设置手势转到验证手势界面。
+<img src="http://github.com/StupidTAO/Picture/blob/master/%E5%BC%95%E5%AF%BC%E9%A1%B5.png" width="150" height="200" alt="引导页"/>
+
 ### 手势解锁模块介绍
 验证手势密码，从showWelcomm.xml文件提取密码，回调接口OnGestureLockViewListener中方法判断是否正确,正确就会进入主界面
+![手势解锁](https://github.com/StupidTAO/Picture/blob/master/%E6%89%8B%E5%8A%BF%E8%A7%A3%E9%94%81.png)
 ### 主界面模块介绍
 模仿QQ的聊天界面实现发送消息，同步刷新界面，实时显示消息。通过将消息包装为ChatMessage的实例对象添加至Listview中并刷新。
+![主界面](https://github.com/StupidTAO/Picture/blob/master/%E4%B8%BB%E9%A1%B5%E9%9D%A2.png)
 ### 侧滑效果模块介绍
 原理分析：在主屏幕下塞入2个布局，使用HorizontalScrollView实现水平滑动布局文件的更换和引入自定义SlidingMenu，重写继承自HorizontalScrollView 的
 View工具类的使用，获得手机屏幕相关的数据
+![侧滑效果](https://github.com/StupidTAO/Picture/blob/master/%E4%BE%A7%E6%BB%91%E6%95%88%E6%9E%9C.png)
 ### 附属功能模块介绍
 实现相应响应功能需要用Intent来调用系统自带功能如相机、短信、打电话、连接网页、设置、以及选择SD卡中的照片内容来设置对话人物的头像。实现调用SD卡中符合要求
 的内容，并返回值。
+![附属功能1](https://github.com/StupidTAO/Picture/blob/master/%E9%99%84%E5%B1%9E%E5%8A%9F%E8%83%BD1.png)![附属功能2](https://github.com/StupidTAO/Picture/blob/master/%E9%99%84%E5%B1%9E%E5%8A%9F%E8%83%BD2.png)
 ## 第三方接口再封装设计
 与图灵机器人智能助手SDK的交互Api 地址： http://www.tuling123.com/openapi/api
 请求方式： http get
